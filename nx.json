@@ -37,7 +37,8 @@
       "plugin": "@nx/jest/plugin",
       "options": {
         "targetName": "test"
-      }
+      },
+      "exclude": ["apps/auth-e2e/**/*"]
     }
   ],
   "generators": {
@@ -55,6 +56,13 @@
         "style": "css",
         "linter": "eslint"
       }
+    }
+  },
+  "targetDefaults": {
+    "@nx/esbuild:esbuild": {
+      "cache": true,
+      "dependsOn": ["^build"],
+      "inputs": ["production", "^production"]
     }
   }
 }
