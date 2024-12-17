@@ -29,7 +29,7 @@ const RequestTokenForm: React.FC<IRequestTokenForm> = (props) => {
     },
   });
 
-  const { setOtpToken } = useContext(AuthenticationContext);
+  const { setIsWaitingForValidation, setEmail } = useContext(AuthenticationContext);
   const {mutate: fetchNewToken, isSuccess, data} = useRequestToken();
 
   const onSubmit: SubmitHandler<Inputs> = (data, e) => {
@@ -38,8 +38,11 @@ const RequestTokenForm: React.FC<IRequestTokenForm> = (props) => {
   };
 
   useEffect(() => {
-    setOtpToken(data?.otp ?? null);
-  }, [isSuccess, setOtpToken, data])
+    if(data?.otp) {
+      setIsWaitingForValidation(true);
+      setEmail(data.emailRequired);
+    }
+  }, [isSuccess, data, setIsWaitingForValidation, setEmail])
   
 
   return (

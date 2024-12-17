@@ -4,8 +4,7 @@ import { AuthenticationContext } from './context/authentication-context';
 import ValidateTokenForm from './components/validate-token-form/validate-token-form';
 
 export function App() {
-  const { otpToken } = useContext(AuthenticationContext);
-  console.log("🚀 ~ App ~ otpToken:", otpToken)
+  const { isWaitingForValidation } = useContext(AuthenticationContext);
 
   const appContainerStyles = {
     height: '100vh',
@@ -16,7 +15,7 @@ export function App() {
 
   return (
     <div data-testid="app" style={appContainerStyles}>
-      {otpToken ? (
+      {isWaitingForValidation ? (
         <div data-testid="validate_token">
           <ValidateTokenForm />
         </div>
