@@ -15,7 +15,10 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@onboarding/themes": ["libs/themes/src/index.ts"]
+      "@onboarding/i18n/data": ["libs/i18n/data/src/index.ts"],
+      "@onboarding/i18n/feature": ["libs/i18n/feature/src/index.ts"],
+      "@onboarding/themes": ["libs/themes/src/index.ts"],
+      "@onboarding/ui": ["libs/i18n/ui/src/index.ts"],
     }
   },
   "exclude": ["node_modules", "tmp"]
