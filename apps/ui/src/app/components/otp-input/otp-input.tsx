@@ -1,32 +1,26 @@
-import { makeStyles, useTheme } from '@mui/material';
-import React from 'react'
+import React, { Dispatch, SetStateAction } from 'react';
+import OtpInput from 'react-otp-input';
 
-const useStyles = makeStyles(theme => ({
-    grid: {
-      backgroundColor: "grey",
-      height: "50vh",
-      textAlign: "center"
-    },
-    avatar: {
-      margin: theme.spacing(1),
-      backgroundColor: theme.palette.secondary.main
-    },
-    submit: {
-      margin: theme.spacing(3, 0, 2)
-    },
-    paper: {
-      marginTop: theme.spacing(8),
-      display: "flex",
-      flexDirection: "column",
-      alignItems: "center"
-    }
-  }));
-  
-const OtpInput = () => {
-
-  return (
-    <div>OtpInput</div>
-  )
+type OtpInputProps = {
+  userToken: string;
+  setUserToken: Dispatch<SetStateAction<string>>;
 }
 
-export default OtpInput
+export const OtpInputComp: React.FC<OtpInputProps> =  ({
+  userToken, setUserToken
+}) =>{
+
+  return (
+    <OtpInput
+      value={userToken}
+      onChange={setUserToken}
+      numInputs={4}
+      renderSeparator={<span>-</span>}
+      renderInput={(props) => <input {...props} />}
+      inputStyle={{
+        height: "3em",
+        width: "3em"
+      }}
+    />
+  );
+}

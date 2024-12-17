@@ -2,13 +2,16 @@ import { ReactNode, useState } from "react";
 import { AuthenticationContext } from "./authentication-context";
 
 export const AuthenticationProvider = ({ children }: {children: ReactNode}) => {
-  const [otpToken, setOtpToken] = useState<string | null>(null);
+  const [email, setEmail] = useState<string | null>(null);
+  const [isWaitingForValidation, setIsWaitingForValidation] = useState(false);
 
   return (
     <AuthenticationContext.Provider
       value={{
-        otpToken,
-        setOtpToken
+        email,
+        setEmail,
+        isWaitingForValidation,
+        setIsWaitingForValidation
       }}
     >
       {children}
