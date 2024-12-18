@@ -1,7 +1,7 @@
 {
-  "name": "data-i18n",
+  "name": "data-router",
   "$schema": "../../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "libs/i18n/data/src",
+  "sourceRoot": "libs/router/data/src",
   "projectType": "library",
   "tags": [],
   "// targets": "to see all targets run: nx show project data --web",
