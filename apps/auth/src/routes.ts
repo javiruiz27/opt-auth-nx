@@ -1,6 +1,6 @@
 import koaRouter from 'koa-router';
-import crypto from 'crypto';
 import jwt from 'jsonwebtoken';
+import { generateOTP, sendOTPEmail } from "@onboarding/otp/feature"
 
 const router = new koaRouter();
 
@@ -9,13 +9,15 @@ router.get('hello', '/', (ctx) => {
 });
 
 router.post('/otp/generate', async (ctx, next) => {
-  const otp = crypto.randomBytes(2).toString('hex');
-  const email = ctx.request.body;
+  const otp = generateOTP(2);
+  const { email } = ctx.request.body;
+  
+  ctx.app.user = { email: email, otp }; //save temporally in memory
+  
+  await sendOTPEmail(email, otp);
+  ctx.body = { message: "OTP sent to your email" }
 
-  ctx.app.user = { email: email.email, otp };
-
-  ctx.body = { otp };
-
+  
   next();
 });
 

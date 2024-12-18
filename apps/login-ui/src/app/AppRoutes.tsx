@@ -2,6 +2,7 @@ import React from 'react';
 import App from './App';
 import { Route } from '@onboarding/router/data';
 import { CustomRouter } from '@onboarding/router/feature';
+import { OtpPageAuth } from '@onboarding/otp-ui/feature';
 
 const routes: Route[] = [
   {
@@ -10,12 +11,11 @@ const routes: Route[] = [
   },
   {
     path: '/login',
-    element: <div>hola</div>,
+    element: <OtpPageAuth />,
   },
 ];
 
 const AppRoutes: React.FC = () => {
-  console.log('hola');
   return <CustomRouter routes={routes} />;
 };
 
