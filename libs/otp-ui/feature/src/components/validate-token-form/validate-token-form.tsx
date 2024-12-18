@@ -11,9 +11,9 @@ const ValidateTokenForm = () => {
 
   const {
     mutate: fetchValidation,
-    isSuccess,
     data: jwtToken,
     error,
+    isSuccess,
   } = useValidateToken();
   const { email } = useContext(AuthenticationContext);
 
@@ -34,6 +34,7 @@ const ValidateTokenForm = () => {
         flexDirection: 'column',
         justifyContent: 'center',
         gap: '8px',
+        textAlign: 'center',
       }}
     >
       <Typography variant="h5">Introduce your token</Typography>
@@ -42,9 +43,15 @@ const ValidateTokenForm = () => {
         Validate
       </Button>
       <Snackbar
+        open={isSuccess}
+        message={'You are successfully logged'}
+        autoHideDuration={5000}
+      />
+      <Snackbar
         open={openErrorMessage}
         message={'Error validating your otp token'}
         onClose={() => setOpenErrorMessage(false)}
+        autoHideDuration={5000}
       />
     </div>
   );

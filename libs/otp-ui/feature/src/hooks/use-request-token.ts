@@ -8,7 +8,7 @@ export interface TokenResponse {
 const REQUEST_TOKEN_KEY = 'request_token';
 
 const useRequestToken = () => {
-  const { data, mutate, error, isSuccess, isPending } = useMutation({
+  const { data, mutate, isPending, status } = useMutation({
     mutationKey: [REQUEST_TOKEN_KEY],
     mutationFn: async (email: string) => {
       const response = await postRequestToken(email);
@@ -19,8 +19,7 @@ const useRequestToken = () => {
   return {
     data,
     mutate,
-    error,
-    isSuccess,
+    status,
     isPending
   };
 };

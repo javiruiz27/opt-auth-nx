@@ -15,6 +15,7 @@ export const postRequestToken = (email: string) => {
     })
     .catch((error) => {
       console.error(error);
+      throw error;
     });
   
 };
@@ -31,5 +32,6 @@ export const postValidateToken = (email: string, otp: string) => {
     })
     .catch((error) => {
       console.error(error);
+      throw error;
     });
 };

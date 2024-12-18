@@ -6,6 +6,7 @@ import {
   Button,
   FormLabel,
   Typography,
+  Snackbar,
 } from '@mui/material';
 import useRequestToken from '../../hooks/use-request-token';
 import { AuthenticationContext } from '../../context/authentication-context';
@@ -33,12 +34,7 @@ const RequestTokenForm: React.FC<IRequestTokenForm> = (props) => {
   const { setIsWaitingForValidation, setEmail } = useContext(
     AuthenticationContext
   );
-  const {
-    mutate: fetchNewToken,
-    isSuccess,
-    data,
-    isPending,
-  } = useRequestToken();
+  const { mutate: fetchNewToken, status, data, isPending } = useRequestToken();
 
   const onSubmit: SubmitHandler<Inputs> = (d, e) => {
     e?.preventDefault();
@@ -46,11 +42,11 @@ const RequestTokenForm: React.FC<IRequestTokenForm> = (props) => {
   };
 
   useEffect(() => {
-    if (data?.otp) {
+    if (status === 'success') {
       setIsWaitingForValidation(true);
       setEmail(data.emailRequired);
     }
-  }, [isSuccess, data, setIsWaitingForValidation, setEmail]);
+  }, [status, data, setIsWaitingForValidation, setEmail]);
 
   if (isPending) {
     return <CircularProgress size="3rem" />;
@@ -86,6 +82,11 @@ const RequestTokenForm: React.FC<IRequestTokenForm> = (props) => {
         {errors.emailRequired && errors.emailRequired.message}
         <Button type="submit">Send</Button>
       </FormControl>
+      <Snackbar
+        open={status === 'error'}
+        message={'Error requesting otp token'}
+        autoHideDuration={1000}
+      />
     </form>
   );
 };

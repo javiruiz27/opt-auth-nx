@@ -4,6 +4,7 @@ import { theme } from '@onboarding/themes';
 import { I18nProvider } from '@onboarding/i18n/feature';
 import { ReactQueryProvider } from '@onboarding/react-query/feature';
 import AppRoutes from './AppRoutes';
+import { AuthenticationProvider } from '@onboarding/otp-ui/feature';
 
 const translations = {
   //cant import of external file. eslint error
@@ -24,7 +25,9 @@ export const AppStarter: React.FC<Props> = () => {
     <ThemeProvider theme={theme}>
       <I18nProvider translations={translations} locale={locale}>
         <ReactQueryProvider>
-          <AppRoutes />
+          <AuthenticationProvider>
+            <AppRoutes />
+          </AuthenticationProvider>
         </ReactQueryProvider>
       </I18nProvider>
     </ThemeProvider>
