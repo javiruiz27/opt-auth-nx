@@ -5,16 +5,7 @@ import { I18nProvider } from '@onboarding/i18n/feature';
 import { ReactQueryProvider } from '@onboarding/react-query/feature';
 import AppRoutes from './AppRoutes';
 import { AuthenticationProvider } from '@onboarding/otp-ui/feature';
-
-const translations = {
-  //cant import of external file. eslint error
-  es: {
-    'test.test': 'prueba',
-  },
-  en: {
-    'test.test': 'test',
-  },
-};
+import translations from '../../translations.json';
 
 type Props = object;
 
