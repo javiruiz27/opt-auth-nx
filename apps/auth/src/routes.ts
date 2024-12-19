@@ -10,7 +10,7 @@ router.get('hello', '/', (ctx) => {
   ctx.body = '<h1>Hello</h1>';
 });
 
-router.get('/data', jwtVal, async (ctx) => {
+router.get('/user-data', jwtVal, async (ctx) => {
   ctx.body = '<h1>hh</h1>';
 });
 

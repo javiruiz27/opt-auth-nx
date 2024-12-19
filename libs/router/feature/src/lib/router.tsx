@@ -1,9 +1,8 @@
 import React from 'react';
-import { Route as IRoute } from '@onboarding/router/data';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, RouteProps } from 'react-router-dom';
 
 interface Props {
-  routes: IRoute[];
+  routes: RouteProps[];
 }
 
 export const CustomRouter: React.FC<Props> = ({ routes }) => {

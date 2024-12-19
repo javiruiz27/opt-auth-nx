@@ -15,17 +15,20 @@ const ValidateTokenForm = () => {
     error,
     isSuccess,
   } = useValidateToken();
-  const { email } = useContext(AuthenticationContext);
+  const { email, setJwtToken } = useContext(AuthenticationContext);
 
   const handleValidateToken = () => {
     fetchValidation({ email: email ?? '', otp: userToken });
   };
 
   useEffect(() => {
+    if (isSuccess) {
+      setJwtToken(jwtToken);
+    }
     if (error) {
       setOpenErrorMessage(true);
     }
-  }, [error]);
+  }, [error, isSuccess, jwtToken, setJwtToken]);
 
   return (
     <div

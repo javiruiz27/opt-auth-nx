@@ -5,6 +5,8 @@ interface IAuthenticationContext {
   setEmail: Dispatch<SetStateAction<string | null>>;
   isWaitingForValidation: boolean;
   setIsWaitingForValidation: Dispatch<SetStateAction<boolean>>;
+  jwtToken: string | null;
+  setJwtToken: Dispatch<SetStateAction<string | null>>;
 }
 
 export const authenticationContextInitialValue: IAuthenticationContext = {
@@ -14,6 +16,10 @@ export const authenticationContextInitialValue: IAuthenticationContext = {
   },
   isWaitingForValidation: false,
   setIsWaitingForValidation: () => {
+    /** do nothing */
+  },
+  jwtToken: null,
+  setJwtToken: () => {
     /** do nothing */
   },
 };

@@ -1,10 +1,10 @@
 import React from 'react';
 import App from './App';
-import { Route } from '@onboarding/router/data';
+import { RouteProps } from 'react-router-dom';
 import { CustomRouter } from '@onboarding/router/feature';
 import { OtpPageAuth } from '@onboarding/otp-ui/feature';
 
-const routes: Route[] = [
+const routes: RouteProps[] = [
   {
     path: '/',
     element: <App />,
@@ -12,6 +12,10 @@ const routes: Route[] = [
   {
     path: '/login',
     element: <OtpPageAuth />,
+  },
+  {
+    path: '/about-me',
+    element: <div>about me</div>,
   },
 ];
 
