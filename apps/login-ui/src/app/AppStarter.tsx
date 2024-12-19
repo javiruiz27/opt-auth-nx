@@ -1,6 +1,6 @@
 import React from 'react';
 import { ThemeProvider } from '@mui/material';
-import { theme } from '@onboarding/themes';
+import { theme } from '@onboarding/otp-ui-theme';
 import { I18nProvider } from '@onboarding/i18n/feature';
 import { ReactQueryProvider } from '@onboarding/react-query/feature';
 import AppRoutes from './AppRoutes';

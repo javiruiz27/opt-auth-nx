@@ -17,17 +17,18 @@
     "resolveJsonModule": true,
     "paths": {
       "@onboarding/auth-data": ["libs/auth/data/src/index.ts"],
+      "@onboarding/base-theme": ["libs/themes-ui/base-theme/src/index.ts"],
       "@onboarding/feature": ["libs/auth/feature/src/index.ts"],
       "@onboarding/i18n/data": ["libs/i18n/data/src/index.ts"],
       "@onboarding/i18n/feature": ["libs/i18n/feature/src/index.ts"],
       "@onboarding/node": ["libs/node/src/index.ts"],
+      "@onboarding/otp-ui-theme": ["libs/themes-ui/otp-ui-theme/src/index.ts"],
       "@onboarding/otp-ui/feature": ["libs/otp-ui/feature/src/index.ts"],
       "@onboarding/react-query/feature": [
         "libs/react-query/feature/src/index.ts"
       ],
       "@onboarding/router/data": ["libs/router/data/src/index.ts"],
-      "@onboarding/router/feature": ["libs/router/feature/src/index.ts"],
-      "@onboarding/themes": ["libs/themes/src/index.ts"]
+      "@onboarding/router/feature": ["libs/router/feature/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
