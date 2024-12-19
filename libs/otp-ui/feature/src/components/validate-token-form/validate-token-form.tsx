@@ -23,7 +23,7 @@ const ValidateTokenForm = () => {
 
   useEffect(() => {
     if (isSuccess) {
-      setJwtToken(jwtToken);
+      localStorage.setItem('jwtToken', JSON.stringify(jwtToken));
     }
     if (error) {
       setOpenErrorMessage(true);

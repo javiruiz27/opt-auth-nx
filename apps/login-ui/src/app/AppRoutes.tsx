@@ -1,7 +1,7 @@
 import React from 'react';
 import App from './App';
 import { RouteProps } from 'react-router-dom';
-import { CustomRouter } from '@onboarding/router/feature';
+import { CustomRouter, RequireAuth } from '@onboarding/router/feature';
 import { OtpPageAuth } from '@onboarding/otp-ui/feature';
 
 const routes: RouteProps[] = [
@@ -15,7 +15,11 @@ const routes: RouteProps[] = [
   },
   {
     path: '/about-me',
-    element: <div>about me</div>,
+    element: (
+      <RequireAuth>
+        <div>about me</div>
+      </RequireAuth>
+    ),
   },
 ];
 

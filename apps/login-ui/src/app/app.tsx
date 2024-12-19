@@ -5,7 +5,7 @@ const App = () => {
   return (
     <div className="container">
       <Typography variant="h1">HOLA QUE TAL</Typography>
-      <Typography variant="h2">
+      <Typography variant="body1Bold">
         <FormattedMessage id="test.test" />
       </Typography>
     </div>

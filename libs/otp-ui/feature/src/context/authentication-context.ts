@@ -7,6 +7,7 @@ interface IAuthenticationContext {
   setIsWaitingForValidation: Dispatch<SetStateAction<boolean>>;
   jwtToken: string | null;
   setJwtToken: Dispatch<SetStateAction<string | null>>;
+  isAuthenticated: boolean;
 }
 
 export const authenticationContextInitialValue: IAuthenticationContext = {
@@ -22,6 +23,7 @@ export const authenticationContextInitialValue: IAuthenticationContext = {
   setJwtToken: () => {
     /** do nothing */
   },
+  isAuthenticated: false,
 };
 
 export const AuthenticationContext = createContext(

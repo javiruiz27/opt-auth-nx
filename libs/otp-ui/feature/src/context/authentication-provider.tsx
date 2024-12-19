@@ -1,4 +1,4 @@
-import { ReactNode, useState } from 'react';
+import { ReactNode, useMemo, useState } from 'react';
 import { AuthenticationContext } from './authentication-context';
 
 export const AuthenticationProvider = ({
@@ -10,6 +10,10 @@ export const AuthenticationProvider = ({
   const [isWaitingForValidation, setIsWaitingForValidation] = useState(false);
   const [jwtToken, setJwtToken] = useState<string | null>(null);
 
+  const isAuthenticated = useMemo(() => {
+    return localStorage.getItem('jwtToken') ? true : false;
+  }, []);
+
   return (
     <AuthenticationContext.Provider
       value={{
@@ -19,6 +23,7 @@ export const AuthenticationProvider = ({
         setIsWaitingForValidation,
         jwtToken,
         setJwtToken,
+        isAuthenticated,
       }}
     >
       {children}

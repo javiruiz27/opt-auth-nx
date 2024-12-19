@@ -5,7 +5,7 @@ export const sendOTPEmail = async (email, otp) => {
     service: 'gmail',
     auth: {
       user: 'javiertestnode@gmail.com',
-      pass: '',
+      pass: 'tlrq fspt ecvu rcmi',
     },
   });
 

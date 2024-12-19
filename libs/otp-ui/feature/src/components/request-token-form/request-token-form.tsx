@@ -24,6 +24,7 @@ const RequestTokenForm: React.FC<IRequestTokenForm> = (props) => {
   const {
     register,
     handleSubmit,
+    watch,
     formState: { errors },
   } = useForm<Inputs>({
     defaultValues: {
@@ -44,9 +45,10 @@ const RequestTokenForm: React.FC<IRequestTokenForm> = (props) => {
   useEffect(() => {
     if (status === 'success') {
       setIsWaitingForValidation(true);
-      setEmail(data.emailRequired);
+      const email = watch('emailRequired');
+      setEmail(email);
     }
-  }, [status, data, setIsWaitingForValidation, setEmail]);
+  }, [status, data, setIsWaitingForValidation, setEmail, watch]);
 
   if (isPending) {
     return <CircularProgress size="3rem" />;
