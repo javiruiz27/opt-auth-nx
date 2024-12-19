@@ -15,9 +15,11 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@onboarding/otp/feature": ["libs/otp/feature/src/index.ts"],
+      "@onboarding/auth-data": ["libs/auth/data/src/index.ts"],
+      "@onboarding/feature": ["libs/auth/feature/src/index.ts"],
       "@onboarding/i18n/data": ["libs/i18n/data/src/index.ts"],
       "@onboarding/i18n/feature": ["libs/i18n/feature/src/index.ts"],
+      "@onboarding/node": ["libs/node/src/index.ts"],
       "@onboarding/otp-ui/feature": ["libs/otp-ui/feature/src/index.ts"],
       "@onboarding/react-query/feature": [
         "libs/react-query/feature/src/index.ts"

@@ -1,6 +1,6 @@
 import koaRouter from 'koa-router';
 import jwt from 'jsonwebtoken';
-import { generateOTP, sendOTPEmail } from '@onboarding/otp/feature';
+import { generateOTP, sendOTPEmail } from '@onboarding/node';
 import { jwtSecret } from './utils';
 import { jwtVal } from './middlewares/index';
 
