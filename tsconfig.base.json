@@ -17,6 +17,7 @@
     "resolveJsonModule": true,
     "paths": {
       "@onboarding/base-theme": ["libs/themes-ui/base-theme/src/index.ts"],
+      "@onboarding/common": ["libs/common/src/index.ts"],
       "@onboarding/header-data": ["libs/header/data/src/index.ts"],
       "@onboarding/header-feature": ["libs/header/feature/src/index.ts"],
       "@onboarding/i18n/data": ["libs/i18n/data/src/index.ts"],

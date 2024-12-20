@@ -7,6 +7,11 @@ import AppRoutes from './AppRoutes';
 import { AuthenticationProvider } from '@onboarding/otp-ui/feature';
 import translations from '../../translations.json';
 import { HeaderDepsBuilder } from './header/HeaderDepsBuilder';
+import {
+  createContextWithValue,
+  wrapWithContextProviders,
+} from '@onboarding/common';
+import { HeaderDepsContext } from '@onboarding/header-data';
 
 type Props = object;
 
@@ -14,6 +19,10 @@ const locale = navigator.language;
 
 export const AppStarter: React.FC<Props> = () => {
   const headerDeps = new HeaderDepsBuilder().buildDeps();
+
+  const contextsWithValues = [
+    createContextWithValue(HeaderDepsContext, headerDeps),
+  ];
 
   const children = (
     <ThemeProvider theme={theme}>
@@ -27,5 +36,5 @@ export const AppStarter: React.FC<Props> = () => {
     </ThemeProvider>
   );
 
-  return children;
+  return <>{wrapWithContextProviders(contextsWithValues, children)}</>;
 };

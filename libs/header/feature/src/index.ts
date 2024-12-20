@@ -1,1 +1,1 @@
-export * from './lib/header-feature';
+export * from './components';
