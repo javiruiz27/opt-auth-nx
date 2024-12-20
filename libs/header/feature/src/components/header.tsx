@@ -1,10 +1,21 @@
+import { Typography } from '@mui/material';
 import { useHeaderDepsContext } from '@onboarding/header-data';
-import React from 'react';
 
 export const Header = () => {
   const headerDepsContext = useHeaderDepsContext();
+  const subtitleEnabled =
+    headerDepsContext.enabled && headerDepsContext.features.showSubtitle;
 
-  console.log('🚀 ~ Header ~ headerDepsContext:', headerDepsContext);
+  const headerStyle = {
+    background: '#1abc9c',
+    color: 'white',
+    width: '100vw',
+  };
 
-  return <div>Header</div>;
+  return (
+    <div style={headerStyle}>
+      <Typography variant="h2">Title</Typography>
+      {subtitleEnabled && <Typography variant="h5">Subtitle</Typography>}
+    </div>
+  );
 };

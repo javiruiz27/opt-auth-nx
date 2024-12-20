@@ -1,13 +1,12 @@
 import React from 'react';
-import App from './App';
 import { RouteProps } from 'react-router-dom';
 import { CustomRouter, RequireAuth } from '@onboarding/router/feature';
-import { OtpPageAuth } from '@onboarding/otp-ui/feature';
+import { OtpPageAuth, MainPage } from '@onboarding/otp-ui/feature';
 
 const routes: RouteProps[] = [
   {
     path: '/',
-    element: <App />,
+    element: <MainPage />,
   },
   {
     path: '/login',

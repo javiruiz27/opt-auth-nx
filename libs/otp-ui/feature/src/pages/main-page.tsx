@@ -2,9 +2,9 @@ import { Typography } from '@mui/material';
 import { FormattedMessage } from 'react-intl';
 import { Header } from '@onboarding/header-feature';
 
-const App = () => {
+export const MainPage = () => {
   return (
-    <div className="container">
+    <div>
       <Header />
       <Typography variant="h1">HOLA QUE TAL</Typography>
       <Typography variant="body1Bold">
@@ -13,5 +13,3 @@ const App = () => {
     </div>
   );
 };
-
-export default App;
