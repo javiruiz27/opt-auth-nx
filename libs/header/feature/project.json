@@ -1,0 +1,9 @@
+{
+  "name": "header-feature",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/header/feature/src",
+  "projectType": "library",
+  "tags": [],
+  "// targets": "to see all targets run: nx show project header-feature --web",
+  "targets": {}
+}
